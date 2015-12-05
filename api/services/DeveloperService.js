@@ -14,6 +14,10 @@ module.exports = {
         return done(error);
       }
 
+      if (user.type !== 'User') {
+        return done(null, null);
+      }
+
       var profileInformation = _.pick(user, Object.keys(Profile.definition));
 
       delete profileInformation.id;
