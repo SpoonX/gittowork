@@ -8,6 +8,9 @@ module.exports = {
   importDeveloper: function (username, done) {
     this.fetchUser(username, function (error, user) {
       if (error) {
+        if (error.error === 404) {
+          return done(null, null);
+        }
         return done(error);
       }
 

@@ -7,7 +7,7 @@ module.exports = function (req, res, next) {
   var params = helpers.secureParameters(['username'], req);
 
   if (!params.isValid()) {
-    return res.badRequest('missing_parameter', 'username');
+    return next();
   }
 
   var username = params.get('username');
