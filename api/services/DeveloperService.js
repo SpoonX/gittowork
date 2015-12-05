@@ -1,11 +1,9 @@
-var GithubApi = require('github-api');
-
 module.exports = {
-  init           : function () {
-    this.githubApi = new GithubApi('https://api.github.com/');
+  getUser : function (username) {
+    return GithubApiService.instance.getUser(username);
   },
   fetchUser      : function (username, done) {
-    this.githubApi.getUser().show(username, done);
+    this.getUser().show(username, done);
   },
   importDeveloper: function (username, done) {
     this.fetchUser(username, function (error, user) {
@@ -24,9 +22,5 @@ module.exports = {
         profile : profileInformation
       }).exec(done);
     });
-  },
-  
-  importRepository : function () {
-    
   }
 };

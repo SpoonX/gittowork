@@ -17,7 +17,7 @@ module.exports = function (req, res, next) {
       return next();
     }
 
-    GithubService.importDeveloper(username, function (error) {
+    DeveloperService.importDeveloper(username, function (error) {
       if (error) {
         return res.serverError(error);
       }
