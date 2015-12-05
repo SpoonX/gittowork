@@ -17,12 +17,16 @@ module.exports = function (req, res, next) {
       return next();
     }
 
-    RepositoryService.importRepository(repositoryName, function (error) {
-      if (error) {
-        return res.serverError(error);
-      }
+    RepositoryService.importRepository(repositoryName)
+      .then(function () {
+        next();
+      })
+      .catch(function (error) {
+        if (error.statusCode === 404) {
+          return next();
+        }
 
-      next();
-    });
+        res.serverError(error);
+      });
   }).catch(res.serverError);
 };

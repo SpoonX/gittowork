@@ -17,12 +17,16 @@ module.exports = function (req, res, next) {
       return next();
     }
 
-    DeveloperService.importDeveloper(username, function (error) {
-      if (error) {
-        return res.serverError(error);
-      }
+    DeveloperService.importDeveloper(username)
+      .then(function () {
+        next();
+      })
+      .catch(function (error) {
+        if (error.statusCode === 404) {
+          return next();
+        }
 
-      next();
-    });
+        res.serverError(error);
+      });
   }).catch(res.serverError);
 };
