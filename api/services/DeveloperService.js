@@ -1,5 +1,5 @@
 module.exports = {
-  getUser : function (username) {
+  getUser        : function (username) {
     return GithubApiService.instance.getUser(username);
   },
   fetchUser      : function (username, done) {
@@ -13,13 +13,12 @@ module.exports = {
 
       var profileInformation = _.pick(user, Object.keys(Profile.definition));
 
-      profileInformation.github_id = profileInformation.id;
-
       delete profileInformation.id;
 
       Developer.create({
-        username: user.login,
-        profile : profileInformation
+        username : user.login,
+        github_id: user.id,
+        profile  : profileInformation
       }).exec(done);
     });
   }

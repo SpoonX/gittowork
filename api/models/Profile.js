@@ -1,6 +1,5 @@
 module.exports = {
   attributes: {
-    github_id      : 'integer',
     type           : 'string',
     developer      : {model: 'developer'},
     avatar_url     : 'string',
