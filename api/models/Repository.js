@@ -1,0 +1,37 @@
+// @todo Link repositories to owner and org (if any)
+module.exports = {
+  attributes: {
+    github_id        : 'integer',
+    name             : 'string',
+    full_name        : 'string',
+    private          : 'boolean',
+    html_url         : 'string',
+    description      : 'string',
+    fork             : 'boolean',
+    url              : 'string',
+    created_at       : 'datetime',
+    updated_at       : 'datetime',
+    pushed_at        : 'datetime',
+    git_url          : 'string',
+    ssh_url          : 'string',
+    clone_url        : 'string',
+    homepage         : 'string',
+    size             : 'integer',
+    stargazers_count : 'integer',
+    watchers_count   : 'integer',
+    language         : 'string',
+    has_issues       : 'boolean',
+    has_downloads    : 'boolean',
+    has_wiki         : 'boolean',
+    has_pages        : 'boolean',
+    forks_count      : 'integer',
+    mirror_url       : 'string',
+    open_issues_count: 'integer',
+    forks            : 'integer',
+    open_issues      : 'integer',
+    watchers         : 'integer',
+    default_branch   : 'string',
+    network_count    : 'integer',
+    subscribers_count: 'integer'
+  }
+};
