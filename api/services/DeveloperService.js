@@ -24,5 +24,9 @@ module.exports = {
         profile : profileInformation
       }).exec(done);
     });
+  },
+  
+  importRepository : function () {
+    
   }
 };
