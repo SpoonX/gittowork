@@ -28,6 +28,11 @@ module.exports.policies = {
 
   // '*': true,
 
+  // User
+  UserController: {
+    fetch : true
+  }
+
   /***************************************************************************
   *                                                                          *
   * Here's an example of mapping some policies to run before a controller    *
