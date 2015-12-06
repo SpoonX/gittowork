@@ -2,10 +2,12 @@ module.exports = {
   attributes: {
     type           : 'string',
     developer      : {model: 'developer'},
+    organization   : {model: 'organization'},
     avatar_url     : 'string',
     gravatar_id    : 'string',
     url            : 'string',
     name           : 'string',
+    description    : 'string',
     company        : 'string',
     blog           : 'string',
     location       : 'string',
