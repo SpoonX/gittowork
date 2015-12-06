@@ -1,8 +1,11 @@
 module.exports.policies = {
-  DeveloperController: {
-    find   : 'ensureDeveloper'
+  DeveloperController   : {
+    find: 'ensureDeveloper'
   },
-  RepositoryController: {
-    find   : 'ensureRepository'
+  RepositoryController  : {
+    find: 'ensureRepository'
+  },
+  OrganizationController: {
+    find: 'ensureOrganization'
   }
 };
