@@ -1,9 +1,9 @@
 // @todo Link repositories to owner and org (if any)
 module.exports = {
   attributes: {
-    github_id        : 'integer',
     name             : 'string',
-    full_name        : 'string',
+    github_id        : {type: 'integer', unique: true},
+    full_name        : {type: 'string', unique: true},
     private          : 'boolean',
     html_url         : 'string',
     description      : 'string',

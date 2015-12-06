@@ -1,7 +1,7 @@
 var helpers = require('request-helpers');
 
 /**
- * Policy which makes sure the user exists, and otherwise creates it.
+ * Policy which makes sure the developer exists, and otherwise creates it.
  */
 module.exports = function (req, res, next) {
   var params = helpers.secureParameters(['username'], req);
